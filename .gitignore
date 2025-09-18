@@ -1,0 +1,4 @@
+# directory
+__pycache__/
+.vscode/
+.ropeproject/

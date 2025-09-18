@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>posecare video preview</title>
+    </head>
+    <body>
+        <h3>posecare video preview</h3>
+        <p>
+            please open browser console by press (F12), then you could see the
+            result sent from server
+        </p>
+
+        <script>
+            // ▶️ midify it to your server ip address
+            const WS_URL = "ws://server_ip/ws/detection";
+            const ws = new WebSocket(WS_URL);
+
+            ws.onopen = () => {
+                console.log("✅ WebSocket connect to", WS_URL);
+                console.log("wating for server result...");
+            };
+
+            ws.onmessage = (ev) => {
+                try {
+                    const msg = JSON.parse(ev.data);
+                    console.log("📥 get detection result: ", msg);
+                    // msg example：
+                    // {
+                    //   frame: "<base64 JPEG>",
+                    //   detections: [
+                    //     { label: "person", confidence: 0.87, box: [x1,y1,x2,y2] },
+                    //     …
+                    //   ],
+                    //   fall_detected: true/false,
+                    //   timestamp: 1694371234.567
+                    // }
+                    console.table(msg.detections);
+                    if (msg.fall_detected) {
+                        console.warn(
+                            "⚠️ Fall detected at",
+                            new Date(msg.timestamp * 1000).toLocaleTimeString(),
+                        );
+                    } else {
+                        console.log("✅ No fall detected.");
+                    }
+                } catch (err) {
+                    console.error(
+                        "❌ can not parse information: ",
+                        err,
+                        ev.data,
+                    );
+                }
+            };
+
+            ws.onerror = (e) => {
+                console.error("❌ WebSocket error: ", e);
+            };
+
+            ws.onclose = () => {
+                console.log("⛔ WebSocket closed.");
+            };
+        </script>
+    </body>
+</html>
