@@ -5,11 +5,7 @@ Avoid the old fall down. <br>
 `avo` is the abbreviation of "audio and video". So actually **avodown** is to avoid down.
 
 > [!Note]
-> This repository contains the source code of project **posecare**.
-
-
-> [!Info]
-> This project is mainly oriented to caring the old.
+> This repository contains the source code of project **posecare** mainly oriented to caring the old.
 
 ## Introduction
 
@@ -19,7 +15,7 @@ The project have three part. First is the server part mainly load the fall-detec
 > This repository doesn't contain the `edge` part automatically following codes and the `app` part codes. So what contains? All the server codes and the `edge` post video and audio codes, and the testing codes to see the video post to server.
 
 
-> [!Attention]
+> [!Warning]
 > **Qwen** model runs on HUAWEI Ascend NPU. Definitely you can modify it in [Qwen.py](./server/QA/Qwen.py). The **YOLO+OpenPose** will automatically use the best device.
 
 ## QuickStart
