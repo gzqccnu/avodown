@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+#
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+#
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 import argparse
 import time
 from pathlib import Path
@@ -117,7 +126,7 @@ def fallDetect(save_img=False):
     t0 = time.time()
     frame_count = 0
     detection_results = []  # 存储检测结果
-    
+
     for path, img, im0s, vid_cap in dataset:
         frame_count += 1
         h0, w0 = im0s.shape[:2]

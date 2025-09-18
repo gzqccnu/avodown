@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+#
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+#
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 import numpy as np
 import torch # 确保导入 torch
 import torch_npu # 如果直接操作NPU，也需要导入
@@ -25,13 +34,13 @@ def act(net, pose, crown_proportion, device=None): # 添加 device 参数
     # *** 关键修改：将张量移动到正确的设备 ***
     # 使用 from_numpy 创建张量，并直接将其移动到指定的设备
     img_tensor = from_numpy(img_np[None, :]) # None 用于添加 batch 维度
-    
+
     if device is not None:
         img_tensor = img_tensor.to(device)
     else: # Fallback to CPU if device is not explicitly given (though it should be)
-        img_tensor = img_tensor.cpu() 
+        img_tensor = img_tensor.cpu()
         print("警告: act 函数未收到设备参数，默认使用 CPU。") # 调试信息
-        
+
     predect = net(img_tensor) # 使用移动到正确设备的张量进行推理
 
     action_id = int(argmax(predect, dim=1).cpu().detach().item()) # 结果可以移回CPU进行处理

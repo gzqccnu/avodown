@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+#
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+#
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 import argparse
 import cv2
 import numpy as np

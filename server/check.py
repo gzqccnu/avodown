@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+#
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+#
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_path = "./qwen_1.5b_chat_model"

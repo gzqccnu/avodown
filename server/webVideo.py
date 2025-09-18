@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+#
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+#
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 import os, time, base64, cv2, numpy as np
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse

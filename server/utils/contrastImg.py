@@ -1,3 +1,12 @@
+# avodown
+# Copyright (c) 2025 gzqccnu <gzqccnu@gmail.com>
+# 
+# This program is released under the terms of the Apache License.
+# See https://opensource.org/licenses/Apache for more information.
+# 
+# Project homepage: https://github.com/gzqccnu/avodown
+# Description: Using models to avoid the old fall down
+
 def mat_inter(box1, box2):
     # 判断两个矩形是否相交
     # box=(xA,yA,xB,yB)
