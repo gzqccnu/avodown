@@ -14,7 +14,8 @@ from pydub import AudioSegment
 from pydub.playback import play
 from io import BytesIO
 
-SERVER_WS   = "ws://111.173.104.220:9870/ws/chat"
+# modify your server_ip here
+SERVER_WS   = "ws://server_ip/ws/chat"
 SAMPLE_RATE = 16000
 CHANNELS    = 1
 DTYPE       = 'int16'
