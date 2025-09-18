@@ -40,7 +40,7 @@ cd download
 # download Qwen
 python downloadQwen.py
 # download vosk
-pyton downloadVosk.py
+python downloadVosk.py
 ```
 
 Now you can run the server
